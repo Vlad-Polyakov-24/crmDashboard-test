@@ -12,11 +12,22 @@
 
 @import "utils/vars";
 @import "utils/mixins";
+@import "utils/fonts";
 @import "utils/app";
+@import "utils/icon";
+@import "utils/pattern";
 
 /* !* components *! */
 
 @import "components/header";
 @import "components/footer";
+@import "components/search";
+@import "components/table";
+@import "components/status";
+@import "components/pagination";
+@import "components/hamburger";
 
 /* !* layout parts *! */
+
+@import "layouts/sidebar";
+@import "layouts/main";

@@ -1,33 +1,252 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>" />
-    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="format-detection" content="telephone=no" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>"/>
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
     <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <!-- og format -->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content=""/>
     <!-- bar color -->
-    <meta name="theme-color" content="#fff" />
-    <meta name="msapplication-navbutton-color" content="#fff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
+    <meta name="theme-color" content="#fff"/>
+    <meta name="msapplication-navbutton-color" content="#fff"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fff"/>
     <!-- favicon -->
     <!--<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
     <!--<link rel="apple-touch-icon" href="assets/images/apple-touch-icon152.png" sizes="152x152">-->
     <title>home</title>
-  </head>
+</head>
 
-  <body>
-    <div class="wrapper" id="wrapper">
-      <%= _.template(require('./parts/header.html'))() %>
+<body>
+<div class="wrapper" id="wrapper">
+    <%= _.template(require('./parts/header.html'))() %>
 
-      <div class="app" id="app"></div>
-
-      <%= _.template(require('./parts/footer.html'))() %>
+    <div class="app" id="app">
+        <div class="dashboard">
+            <button type="button" class="hamburger" data-hamburger><span></span></button>
+            <aside class="sidebar" data-sidebar>
+                <strong class="sidebar__logo">
+                    <a href="#" class="sidebar__logo-link">
+                        <picture>
+                            <img src="assets/images/logo.svg" alt="logo">
+                        </picture>
+                    </a>
+                </strong>
+                <nav class="sidebar__nav">
+                    <ul class="sidebar__nav-list">
+                        <li>
+                            <a href="#" class="sidebar__nav-link">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-01"></use></svg>
+                                </span>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar__nav-link">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-02"></use></svg>
+                                </span>
+                                <span class="text">Product</span>
+                                <span class="icon icon--16 arrow">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#arrow"></use></svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar__nav-link sidebar__nav-link--active">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-03"></use></svg>
+                                </span>
+                                <span class="text">Customers</span>
+                                <span class="icon icon--16 arrow">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#arrow"></use></svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar__nav-link">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-04"></use></svg>
+                                </span>
+                                <span class="text">Income</span>
+                                <span class="icon icon--16 arrow">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#arrow"></use></svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar__nav-link">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-05"></use></svg>
+                                </span>
+                                <span class="text">Promote</span>
+                                <span class="icon icon--16 arrow">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#arrow"></use></svg>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar__nav-link">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#icon-06"></use></svg>
+                                </span>
+                                <span class="text">Help</span>
+                                <span class="icon icon--16 arrow">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#arrow"></use></svg>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="sidebar__user">
+                    <div class="sidebar__user-logo">
+                        <picture>
+                            <img src="assets/images/users/user-01.jpg" alt="user">
+                        </picture>
+                    </div>
+                    <p class="sidebar__user-name">Evano</p>
+                    <small class="sidebar__user-position">Project Manager</small>
+                </div>
+            </aside>
+            <main class="dashboard__content">
+                <h2 class="section-title">Hello Evano 👋🏼,</h2>
+                <section class="customers">
+                    <header class="customers__header">
+                        <div>
+                            <h3 class="title">All Customers</h3>
+                            <small class="subtitle">Active Members</small>
+                        </div>
+                        <form class="search">
+                            <label for="customers-search" class="search__label">
+                                <input type="text" class="search__input" name="customers-search" id="customers-search" placeholder="Search">
+                            </label>
+                            <button type="submit" class="search__btn">
+                                <span class="icon icon--24">
+                                    <svg><use xlink:href="assets/images/icons/sprites.svg#search"></use></svg>
+                                </span>
+                            </button>
+                        </form>
+                    </header>
+                    <article class="customers__body">
+                        <div class="customers__table" data-scroll-hint>
+                            <table class="table">
+                                <thead>
+                                <tr class="table__tr">
+                                    <th class="table__th">Customer Name</th>
+                                    <th class="table__th">Company</th>
+                                    <th class="table__th">Phone Number</th>
+                                    <th class="table__th">Email</th>
+                                    <th class="table__th">Country</th>
+                                    <th class="table__th">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="table__tr">
+                                    <td class="table__td">Jane Cooper</td>
+                                    <td class="table__td">Microsoft</td>
+                                    <td class="table__td"><a href="tel:2255550118">(225) 555-0118</a></td>
+                                    <td class="table__td"><a href="mailto:jane@microsoft.com">jane@microsoft.com</a></td>
+                                    <td class="table__td">United States</td>
+                                    <td class="table__td"><span class="status status--active">Active</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Floyd Miles</td>
+                                    <td class="table__td">Yahoo</td>
+                                    <td class="table__td"><a href="tel:2055550100">(205) 555-0100</a></td>
+                                    <td class="table__td"><a href="mailto:floyd@yahoo.com">floyd@yahoo.com</a></td>
+                                    <td class="table__td">Kiribati</td>
+                                    <td class="table__td"><span class="status status--inactive">Inactive</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Ronald Richards</td>
+                                    <td class="table__td">Adobe</td>
+                                    <td class="table__td"><a href="tel:3025550107">(302) 555-0107</a></td>
+                                    <td class="table__td"><a href="mailto:ronald@adobe.com">ronald@adobe.com</a></td>
+                                    <td class="table__td">Israel</td>
+                                    <td class="table__td"><span class="status status--inactive">Inactive</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Marvin McKinney</td>
+                                    <td class="table__td">Tesla</td>
+                                    <td class="table__td"><a href="tel:2525550126">(252) 555-0126</a></td>
+                                    <td class="table__td"><a href="mailto:marvin@tesla.com">marvin@tesla.com</a></td>
+                                    <td class="table__td">Iran</td>
+                                    <td class="table__td"><span class="status status--active">Active</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Jerome Bell</td>
+                                    <td class="table__td">Google</td>
+                                    <td class="table__td"><a href="tel:6295550129">(629) 555-0129</a></td>
+                                    <td class="table__td"><a href="mailto:jerome@google.com">jerome@google.com</a></td>
+                                    <td class="table__td">Réunion</td>
+                                    <td class="table__td"><span class="status status--active">Active</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Kathryn Murphy</td>
+                                    <td class="table__td">Microsoft</td>
+                                    <td class="table__td"><a href="tel:4065550120">(406) 555-0120</a></td>
+                                    <td class="table__td"><a href="mailto:kathryn@microsoft.com">kathryn@microsoft.com</a></td>
+                                    <td class="table__td">Curaçao</td>
+                                    <td class="table__td"><span class="status status--active">Active</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Jacob Jones</td>
+                                    <td class="table__td">Yahoo</td>
+                                    <td class="table__td"><a href="tel:2085550112">(208) 555-0112</a></td>
+                                    <td class="table__td"><a href="mailto:jacob@yahoo.com">jacob@yahoo.com</a></td>
+                                    <td class="table__td">Brazil</td>
+                                    <td class="table__td"><span class="status status--active">Active</span></td>
+                                </tr>
+                                <tr class="table__tr">
+                                    <td class="table__td">Kristin Watson</td>
+                                    <td class="table__td">Facebook</td>
+                                    <td class="table__td"><a href="tel:7045550127">(704) 555-0127</a></td>
+                                    <td class="table__td"><a href="mailto:kristin@facebook.com">kristin@facebook.com</a></td>
+                                    <td class="table__td">Åland Islands</td>
+                                    <td class="table__td"><span class="status status--inactive">Inactive</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <footer class="customers__footer">
+                        <p class="info">Showing data 1 to 8 of 256K entries</p>
+                        <ul class="pagination">
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link pagination__link--prev">&lt;</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link pagination__link--active">1</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link">2</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link">3</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link">4</a>
+                            </li>
+                            <li class="pagination__item pagination__item--rest">...</li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link">40</a>
+                            </li>
+                            <li class="pagination__item">
+                                <a href="#" class="pagination__link pagination__link--next">&gt;</a>
+                            </li>
+                        </ul>
+                    </footer>
+                </section>
+            </main>
+        </div>
     </div>
-  </body>
+
+    <%= _.template(require('./parts/footer.html'))() %>
+</div>
+</body>
 </html>
